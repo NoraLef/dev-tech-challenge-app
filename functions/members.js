@@ -1,21 +1,21 @@
-import { ProductService } from '../lib/product-service.js'
+import { MemberService } from '../lib/member-service.js'
 import { client, headers } from '../lib/config.js'
 
-const service = new ProductService({ client })
+const service = new MemberService({ client })
 
 exports.handler = async (event, context) => {
-	console.log('Function `products` invoked')
+	console.log('Function `members` invoked')
 
 	if (event.httpMethod !== 'GET') {
 		return { statusCode: 405, headers, body: 'Method Not Allowed' }
 	}
 
 	try {
-		const products = await service.getProducts()
+		const members = await service.getMembers()
 		return {
 			statusCode: 200,
 			headers,
-			body: JSON.stringify(products),
+			body: JSON.stringify(members),
 		}
 	} catch (error) {
 		console.log('error', error)

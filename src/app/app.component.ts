@@ -12,8 +12,9 @@ export class AppComponent {
   constructor(private http: HttpClient) {}
 
 	ngOnInit() {
-		this.http.get('https://upbeat-lamport-af75f5.netlify.app/.netlify/functions/products').subscribe((response) => {
-			console.log('response: ', response)
+		this.http.get('https://upbeat-lamport-af75f5.netlify.app/.netlify/functions/members').subscribe((response) => {
+			console.log('response: ', response);
+
 		})
 	}
 }
