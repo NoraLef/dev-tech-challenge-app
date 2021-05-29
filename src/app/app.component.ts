@@ -17,7 +17,7 @@ export class AppComponent {
       console.log('test');
       console.log(Object.values(response));
       Object.values(response).forEach(element => {
-        console.log(element);
+        console.log(element.data.name);
       });
 		})
 	}
