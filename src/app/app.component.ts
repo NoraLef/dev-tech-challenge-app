@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dev-tech-challenge-app';
+
+  constructor(private http: HttpClient) {}
+
+	ngOnInit() {
+		this.http.get('http://localhost:9000/.netlify/functions/products').subscribe((response) => {
+			console.log('response: ', response)
+		})
+	}
 }
