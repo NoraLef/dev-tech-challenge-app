@@ -13,9 +13,9 @@
 <main>
   <!-- New member form -->
   <h2>Ajouter un(e) Argonaute</h2>
-  <form class="new-member-form">
+  <form class="new-member-form" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
     <label for="name">Nom de l&apos;Argonaute</label>
-    <input id="name" name="name" type="text" placeholder="Charalampos" />
+    <input id="name" name="name" type="text" formControlName="name" />
     <button type="submit">Envoyer</button>
   </form>
 
