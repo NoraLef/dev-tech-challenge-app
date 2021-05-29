@@ -6,12 +6,12 @@ const service = new MemberService({ client })
 exports.handler = async (event, context) => {
 	console.log('Function `members` invoked')
 
-	if (event.httpMethod !== 'GET') {
-		return { statusCode: 405, headers, body: 'Method Not Allowed' }
-	}
+	// if (event.httpMethod !== 'GET') {
+	// 	return { statusCode: 405, headers, body: 'Method Not Allowed' }
+	// }
 
 	try {
-    console.log("event.httpMethod");
+    console.log(event.httpMethod);
 		const members = await service.getMembers()
 		return {
 			statusCode: 200,
