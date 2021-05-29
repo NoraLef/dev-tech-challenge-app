@@ -14,7 +14,7 @@ export class AppComponent {
 	ngOnInit() {
 		this.http.get('https://upbeat-lamport-af75f5.netlify.app/.netlify/functions/members').subscribe((response) => {
 			console.log('response: ', response);
-
+      console.log(typeof(response));
 		})
 	}
 }
