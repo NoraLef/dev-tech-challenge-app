@@ -15,7 +15,10 @@ export class AppComponent {
 		this.http.get('https://upbeat-lamport-af75f5.netlify.app/.netlify/functions/members').subscribe((response) => {
 			console.log('response: ', response);
       console.log('test');
-      console.log(typeof(response));
+      console.log(Object.values(response));
+      Object.values(response).forEach(element => {
+        console.log(element);
+      });
 		})
 	}
 }
