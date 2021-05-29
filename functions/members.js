@@ -10,9 +10,27 @@ exports.handler = async (event, context) => {
 	// 	return { statusCode: 405, headers, body: 'Method Not Allowed' }
 	// }
 
-	try {
+	// try {
+  //   console.log(event.httpMethod);
+	// 	const members = await service.getMembers()
+	// 	return {
+	// 		statusCode: 200,
+	// 		headers,
+	// 		body: JSON.stringify(members),
+	// 	}
+	// } catch (error) {
+	// 	console.log('error', error)
+
+	// 	return {
+	// 		statusCode: 400,
+	// 		headers,
+	// 		body: JSON.stringify(error),
+	// 	}
+	// }
+
+  try {
     console.log(event.httpMethod);
-		const members = await service.getMembers()
+		service.addMember('Memememe');
 		return {
 			statusCode: 200,
 			headers,
