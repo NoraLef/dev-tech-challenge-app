@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'dev-tech-challenge-app';
+  members:string[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -18,6 +19,7 @@ export class AppComponent {
       console.log(Object.values(response));
       Object.values(response).forEach(element => {
         console.log(element.data.name);
+        this.members.push(element.data.name);
       });
 		})
 	}
