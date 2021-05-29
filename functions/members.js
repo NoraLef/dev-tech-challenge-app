@@ -11,6 +11,7 @@ exports.handler = async (event, context) => {
 	}
 
 	try {
+    console.log("event.httpMethod");
 		const members = await service.getMembers()
 		return {
 			statusCode: 200,
