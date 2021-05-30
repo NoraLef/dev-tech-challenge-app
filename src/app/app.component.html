@@ -13,16 +13,17 @@
 <main>
   <!-- New member form -->
   <h2>Ajouter un(e) Argonaute</h2>
-  <form class="new-member-form" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <form class="new-member-form" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" ngNativeValidate>
     <label for="name">Nom de l&apos;Argonaute</label>
-    <input id="name" name="name" type="text" formControlName="name" />
+    <input id="name" name="name" type="text" formControlName="name" required />
     <button type="submit">Envoyer</button>
   </form>
 
   <!-- Member list -->
   <h2>Membres de l'équipage</h2>
+  <h3>{{ this.members.length }}/50 Membres</h3>
   <section class="member-list">
-    <div class="member-item" *ngFor="let member of this.members">{{ member }}</div>
+    <div class="member-item" *ngFor="let member of this.members">{{ member.name }}<button (click)="onDelete(member.id, member.name)">X</button></div>
   </section>
 </main>
 

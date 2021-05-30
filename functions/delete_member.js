@@ -10,7 +10,7 @@ exports.handler = async (event, context) => {
 	}
 
   try {
-		service.addMember(event.body);
+		service.deleteMember(event.body);
 		return {
 			statusCode: 200,
 			headers,
