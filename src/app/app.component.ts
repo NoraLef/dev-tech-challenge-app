@@ -17,7 +17,7 @@ export class AppComponent {
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {}
 
 	ngOnInit() {
-		this.http.get('https://upbeat-lamport-af75f5.netlify.app/.netlify/functions/members').subscribe((response) => {
+		this.http.get('https://upbeat-lamport-af75f5.netlify.app/.netlify/functions/get_all_members').subscribe((response) => {
       Object.values(response).forEach(element => {
         console.log(element.data.name);
         this.members.push(element.data.name);
@@ -26,7 +26,7 @@ export class AppComponent {
 	}
 
   onSubmit(): void {
-    this.http.post('https://upbeat-lamport-af75f5.netlify.app/.netlify/functions/members', this.checkoutForm.value.name).subscribe((response) => {
+    this.http.post('https://upbeat-lamport-af75f5.netlify.app/.netlify/functions/create_member', this.checkoutForm.value.name).subscribe((response) => {
       console.log(response);
     })
     console.log('Done: ', this.checkoutForm.value.name);
