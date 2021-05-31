@@ -30,13 +30,18 @@ footer {
 
 h1,
 h2,
-h3 {
+h3,
+p {
   text-align: center;
 }
 
 label {
   display: block;
   margin-bottom: 0.5em;
+}
+
+button {
+  cursor: pointer;
 }
 
 .new-member-form {
@@ -50,10 +55,34 @@ label {
 }
 
 .member-item {
-  padding: 0.25em 0;
-  flex-grow: 1;
+  display: flex;
+  padding: 0.25em 0em;
   width: 33%;
+  flex-grow: 1;
+  justify-content: space-between;
+  border: lightgrey solid 0.5px;
+}
+
+.member-item p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-align: center;
+  width: 86%;
+}
+
+.member-item button {
+  width: 14%;
+  background-color: lightsalmon;
+  border: transparent;
+  color: black;
+  border-radius: 10%;
+  margin: 1em;
+}
+
+.member-item button:hover {
+  background-color: lightsalmon;
+  color: white;
 }
 
 footer {

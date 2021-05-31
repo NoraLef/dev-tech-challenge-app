@@ -22,8 +22,9 @@
   <!-- Member list -->
   <h2>Membres de l'équipage</h2>
   <h3>{{ this.members.length }}/50 Membres</h3>
-  <section class="member-list">
-    <div class="member-item" *ngFor="let member of this.members">{{ member.name }}<button (click)="onDelete(member.id, member.name)">X</button></div>
+  <p *ngIf="this.members.length === 0">Vous n'avez ajouté aucun membre à votre équipage. Veuillez utiliser le formulaire ci-dessus pour en ajouter.</p>
+  <section class="member-list" *ngIf="this.members.length > 0">
+    <div class="member-item" *ngFor="let member of this.members"><p>{{ member.name }}</p><button (click)="onDelete(member.id, member.name)"><mat-icon>delete</mat-icon></button></div>
   </section>
 </main>
 
